@@ -1,0 +1,36 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}    
+
+{% block titulo%}
+  
+Busqueda
+
+{% endblock titulo%}
+
+{% block subtitulo%}
+  
+Aqui buscamos las distintas placas de video
+
+{% endblock subtitulo%}
+
+{% block botones%}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'Compus' %}">Computadora</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'CompuFormulario' %}">Crear</a></li>
+
+{% endblock %}
+
+{% block formu%}
+
+<center><form action="/AppCoder/resultadoPlacaVideo/" method="GET">
+    
+<p> Placa de video: <input type="text" name="placaVideo"> </p>
+
+    <input type="submit" value="Buscar!">
+
+
+ </form></center>
+
+{% endblock formu%}

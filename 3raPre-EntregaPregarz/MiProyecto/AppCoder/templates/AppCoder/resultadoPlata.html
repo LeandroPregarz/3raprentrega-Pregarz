@@ -1,0 +1,58 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}    
+
+{% block titulo%}
+  
+Resultados
+
+{% endblock titulo%}
+
+{% block subtitulo%}
+  
+Aqui vemos los resultados de la busqueda de placas de video
+
+{% endblock subtitulo%}
+
+{% block botones %}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'Platfo' %}">Plataforma</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'PlataFormulario' %}">Crear</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'BusquedaPlata' %}">Buscar</a></li>
+
+{% endblock botones %}
+
+
+{% block formu%}
+
+{% if result %}
+
+    
+
+<center>
+
+    <p><h3>Estamos buscando la placa de video: {{plataforma}} </h3></p>
+
+<ul>
+
+    {% for plata in result %}
+
+        <li>
+            Nombre plataforma {{plata.nombrePlataforma}} -- Usuario: {{plata.user}} -- Email: {{plata.mail}} 
+        </li>
+    
+</center>
+    {% endfor %}
+</ul>
+
+{% else %}
+
+<h3>No hay resultados que coincidan con tu busqueda</h3>
+
+
+{% endif %}
+
+
+
+{% endblock formu%}

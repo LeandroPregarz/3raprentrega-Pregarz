@@ -1,0 +1,24 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}    
+
+{% block titulo%}
+  
+Plataforma
+
+{% endblock titulo%}
+
+{% block subtitulo%}
+  
+Jugas en... ¿Steam? ¿Epic Games? ¿Game Pass? Contame!
+
+{% endblock subtitulo%}
+
+{% block botones %}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'PlataFormulario' %}">Crear</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'BusquedaPlata' %}">Buscar</a></li>
+
+{% endblock botones %}
+

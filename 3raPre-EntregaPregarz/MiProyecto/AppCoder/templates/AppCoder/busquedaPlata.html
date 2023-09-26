@@ -1,0 +1,36 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}    
+
+{% block titulo%}
+  
+Busqueda
+
+{% endblock titulo%}
+
+{% block subtitulo%}
+  
+Aqui buscamos las distintas plataformas
+
+{% endblock subtitulo%}
+
+{% block botones%}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'Platfo' %}">Plataformas</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'PlataFormulario' %}">Crear</a></li>
+
+{% endblock %}
+
+{% block formu %}
+
+<center><form action="/AppCoder/resultadoPlata/" method="GET">
+    
+<p> Nombre plataforma: <input type="text" name="plataforma"> </p>
+
+    <input type="submit" value="Buscar!">
+
+
+ </form></center>
+
+{% endblock formu %}

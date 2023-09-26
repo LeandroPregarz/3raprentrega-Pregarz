@@ -1,0 +1,23 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}    
+
+{% block titulo%}
+  
+Componentes
+
+{% endblock titulo%}
+
+{% block subtitulo%}
+  
+Aqui veras los componentes de las pc
+
+{% endblock subtitulo%}
+
+{% block botones%}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'CompuFormulario' %}">Crear</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'BusquedaPlacaVideo' %}">Buscar</a></li>
+
+{% endblock botones%}

@@ -1,0 +1,36 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}    
+
+{% block titulo%}
+  
+Busqueda
+
+{% endblock titulo%}
+
+{% block subtitulo%}
+  
+Aqui buscamos los distintos teclados
+
+{% endblock subtitulo%}
+
+{% block botones%}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'Perif' %}">Perifericos</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'PeriFormulario' %}">Crear</a></li>
+
+{% endblock %}
+
+{% block formu %}
+
+<center><form action="/AppCoder/resultadoTeclado/" method="GET">
+    
+<p> Teclado: <input type="text" name="teclado"> </p>
+
+    <input type="submit" value="Buscar!">
+
+
+ </form></center>
+
+{% endblock formu %}

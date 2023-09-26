@@ -1,0 +1,57 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}    
+
+{% block titulo%}
+  
+Resultados
+
+{% endblock titulo%}
+
+{% block subtitulo%}
+  
+Aqui vemos los resultados de la busqueda de los teclados
+
+{% endblock subtitulo%}
+
+{% block botones %}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'Perif' %}">Perifericos</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'PeriFormulario' %}">Crear</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'BusquedaTeclado' %}">Buscar</a></li>
+
+{% endblock botones %}
+
+{% block formu%}
+
+{% if resu %}
+
+    
+
+<center>
+
+    <p><h3>Estamos buscando el teclado: {{keyboard}} </h3></p>
+
+<ul>
+
+    {% for teclado in resu %}
+
+        <li>
+            Teclado: {{teclado.teclado}} -- Mouse: {{teclado.mouse}} -- Monitor: {{teclado.monitor}} -- Headset: {{teclado.headset}} 
+        </li>
+    
+</center>
+    {% endfor %}
+</ul>
+
+{% else %}
+
+<h3>No hay resultados que coincidan con tu busqueda</h3>
+
+
+{% endif %}
+
+
+
+{% endblock formu%}

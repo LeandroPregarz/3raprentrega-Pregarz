@@ -1,0 +1,23 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}    
+
+{% block titulo%}
+  
+Perifericos
+
+{% endblock titulo%}
+
+{% block subtitulo%}
+  
+Aqui veras las herramientas de un verdadero gamer
+
+{% endblock subtitulo%}
+
+{% block botones %}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'PeriFormulario' %}">Crear</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'BusquedaTeclado' %}">Buscar</a></li>
+
+{% endblock botones %}

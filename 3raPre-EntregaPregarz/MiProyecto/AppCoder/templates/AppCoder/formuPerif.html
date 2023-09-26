@@ -1,0 +1,40 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}    
+
+{% block titulo%}
+  
+Perifericos
+
+{% endblock titulo%}
+
+{% block subtitulo%}
+  
+Aqui puedes añadir tus perifericos a nuestra base de datos.
+
+{% endblock subtitulo%}
+
+{% block botones%}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'Perif' %}">Perifericos</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'BusquedaTeclado' %}">Buscar</a></li>
+
+{% endblock %}
+
+{% block formu%}
+
+<center><form action="" method="POST"> {% csrf_token %}
+    
+    <table>
+       
+        {{form2.as_table}}
+
+    </table>
+
+    <input type="submit" value="Enviar datos">
+
+
+ </form></center>
+
+{% endblock formu%}

@@ -1,0 +1,40 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}    
+
+{% block titulo%}
+  
+Plataforma
+
+{% endblock titulo%}
+
+{% block subtitulo%}
+  
+Jugas en... ¿Steam? ¿Epic Games? ¿Game Pass? Contame!
+
+{% endblock subtitulo%}
+
+{% block botones %}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'Platfo' %}">Plataforma</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'BusquedaPlata' %}">Buscar</a></li>
+
+{% endblock botones %}
+
+{% block formu%}
+
+<center><form action="" method="POST"> {% csrf_token %}
+    
+    <table>
+       
+        {{form4.as_table}}
+
+    </table>
+
+    <input type="submit" value="Enviar datos">
+
+
+ </form></center>
+
+{% endblock formu%}

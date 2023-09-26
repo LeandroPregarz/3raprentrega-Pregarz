@@ -1,0 +1,58 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}    
+
+{% block titulo%}
+  
+Resultados
+
+{% endblock titulo%}
+
+{% block subtitulo%}
+  
+Aqui vemos los resultados de la busqueda de placas de video
+
+{% endblock subtitulo%}
+
+{% block botones %}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'Compus' %}">Computadora</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'CompuFormulario' %}">Crear</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'BusquedaPlacaVideo' %}">Buscar</a></li>
+
+{% endblock botones %}
+
+
+{% block formu%}
+
+{% if res %}
+
+    
+
+<center>
+
+    <p><h3>Estamos buscando la placa de video: {{placaVid}} </h3></p>
+
+<ul>
+
+    {% for placa in res %}
+
+        <li>
+            Placa Madre: {{placa.placaMadre}} -- Placa de video: {{placa.placaVideo}} -- Procesador: {{placa.procesador}} -- Ram: {{placa.ram}} -- Fuente: {{placa.fuente}} -- Almacenamiento: {{placa.almacenamiento}}
+        </li>
+    
+</center>
+    {% endfor %}
+</ul>
+
+{% else %}
+
+<h3>No hay resultados que coincidan con tu busqueda</h3>
+
+
+{% endif %}
+
+
+
+{% endblock formu%}

@@ -1,0 +1,40 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}    
+
+{% block titulo%}
+  
+Componentes
+
+{% endblock titulo%}
+
+{% block subtitulo%}
+  
+Aqui puedes añadir tus partes a nuestra base de datos.
+
+{% endblock subtitulo%}
+
+{% block botones%}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'Compus' %}">Computadora</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'BusquedaPlacaVideo' %}">Buscar</a></li>
+
+{% endblock %}
+
+{% block formu%}
+
+<center><form action="" method="POST"> {% csrf_token %}
+    
+    <table>
+       
+        {{form1.as_table}}
+
+    </table>
+
+    <input type="submit" value="Enviar datos">
+
+
+ </form></center>
+
+{% endblock formu%}
